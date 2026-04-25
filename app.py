@@ -43,11 +43,11 @@ st.markdown("<p style='text-align:center;'>Bias Detection • Ethical AI • AI 
 # =========================
 # GEMINI SETUP
 # =========================
-API_KEY = os.getenv("GEMINI_API_KEY")
+API_KEY = st.secrets["GEMINI_API_KEY"]
 
 if API_KEY:
-    genai.configure(api_key="AIzaSyCn8xdjjpEfq9RponBsjfckOEbDUi7DoPo")
-    model_gemini = genai.GenerativeModel("gemini-2.5-flash")
+    genai.configure(api_key=API_KEY)
+    model_gemini = genai.GenerativeModel("gemini-2.0-flash")
 else:
     model_gemini = None
 
